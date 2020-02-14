@@ -8,7 +8,7 @@
    font-family: 'PT Serif', serif;
 }
 
-body{
+.movies-body{
    background-color: rgb(36, 35, 35);
 }
 
@@ -68,6 +68,19 @@ header{
    padding: 2%;
    font-size: small;
    overflow: hidden;
+}
+
+.profile{
+   max-width: 133px;
+   padding: 1.5% 2% 1.5% 2%;
+   margin: 1.5%;
+   background-color: #242323;
+   color: white;
+   text-align: center;
+}
+
+.profile-pic{
+   border-radius: 50%;
 }
 
 @media screen and (min-width: 600px) {

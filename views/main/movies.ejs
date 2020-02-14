@@ -4,8 +4,9 @@
       <title>Now Playing</title>
       <%- include ('../partials/head') %> 
    </head>
-   <body>
+   <body class="movies-body">
       <header>Movies Now Playing</header> 
+      
       <div class="container">
          <% data.forEach(({title,poster_path,overview})=>{ %>
             <div class="card"">

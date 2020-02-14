@@ -17,7 +17,19 @@ app.set('views', path.join(__dirname, 'views'))
 
 
 app.get('/random', (req,res) => {
-   const url = 'https://randomuser.me/api/?results=20'
+   const url = 'https://randomuser.me/api/?results=30'
+
+   const thirtyRandomPeople = async()=>{
+      try{
+         const response = await axios.get(url)
+         const data = response.data.results.sort((a,b)=>(a.name.first > b.name.first) ? 1 : ((b.name.first > a.name.first) ? -1 : 0))
+         console.log(data)
+         return res.render('main/random', {data})
+      }catch(error){
+         console.error(error);
+      }
+   }
+   thirtyRandomPeople()
 })
 
 app.get('/movies', (req,res) => {
@@ -26,11 +38,11 @@ app.get('/movies', (req,res) => {
    const nowPlaying = '&language=en-US&page=1'
    
    const nowPlayingMovies = async()=> {
-      try {
+      try{
          const response = await axios.get(url+key+nowPlaying)
          const data = response.data.results
          return res.render('main/movies', {data})
-      } catch (error) {
+      }catch(error){
          console.error(error);
       }
    }
