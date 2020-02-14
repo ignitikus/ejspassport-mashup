@@ -1,0 +1,27 @@
+{
+  "name": "ejspassport-mashup",
+  "version": "1.0.0",
+  "description": "Create a repo called ejspassport-mashup. Please submit the repo here.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ignitikus/ejspassport-mashup.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ignitikus/ejspassport-mashup/issues"
+  },
+  "homepage": "https://github.com/ignitikus/ejspassport-mashup#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1"
+  }
+}

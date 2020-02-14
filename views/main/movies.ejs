@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Now Playing</title>
+      <%- include ('../partials/head') %> 
+   </head>
+   <body>
+      <header>Movies Now Playing</header> 
+      <div class="container">
+         <% data.forEach(({title,poster_path,overview})=>{ %>
+            <div class="card"">
+               <img src= <%='https://image.tmdb.org/t/p/w185'+ poster_path %> class="card-img" alt="...">
+               <div class="title-overview">
+                  <h2 class="card-title"> <%= title %> </h5>
+                  <p class="card-overview"><%= overview %> </p>
+               </div>
+            </div>
+         <%})%>
+      </div>
+
+      <%- include ('../partials/footer') %> 
+   </body>
+</html>
