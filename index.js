@@ -23,7 +23,6 @@ app.get('/random', (req,res) => {
       try{
          const response = await axios.get(url)
          const data = response.data.results.sort((a,b)=>(a.name.first > b.name.first) ? 1 : ((b.name.first > a.name.first) ? -1 : 0))
-         console.log(data)
          return res.render('main/random', {data})
       }catch(error){
          console.error(error);
@@ -48,6 +47,24 @@ app.get('/movies', (req,res) => {
    }
    nowPlayingMovies()
 })
+
+app.get('/movies/alternative', (req,res) => {
+   const url = 'https://api.themoviedb.org/3/movie/now_playing?api_key='
+   const key = process.env.API_KEY
+   const nowPlaying = '&language=en-US&page=1'
+   
+   const nowPlayingMovies = async()=> {
+      try{
+         const response = await axios.get(url+key+nowPlaying)
+         const data = response.data.results
+         return res.render('main/moviesAlternative', {data})
+      }catch(error){
+         console.error(error);
+      }
+   }
+   nowPlayingMovies()
+})
+
 
 app.listen(port, () => {
    console.log(`Listening on port ${port}`)
